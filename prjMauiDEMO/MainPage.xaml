@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="prjMAUIDEMO.MainPage">
+
+    
+        
+        <StackLayout Orientation="Vertical"
+                     VerticalOptions="FillAndExpand">
+
+            <StackLayout>
+                <Button Text="ok" Clicked="Button_Clicked"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal"
+                         VerticalOptions="FillAndExpand">
+                <Label Text="紅" 
+                       x:Name="label1"
+                       FontSize="40"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       BackgroundColor="#FF2D2D"
+                       HorizontalOptions="FillAndExpand"/>
+                <Label Text="藍" 
+                       x:Name="label2"
+                       FontSize="40"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       BackgroundColor="#0072E3"
+                       HorizontalOptions="FillAndExpand"/>
+                <Label Text="綠" 
+                       x:Name="label3"
+                       FontSize="40"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       BackgroundColor="#01B468"
+                       HorizontalOptions="FillAndExpand"/>
+                <Label Text="黃" 
+                       x:Name="label4"
+                       FontSize="40"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       BackgroundColor="#FFFF37"
+                       HorizontalOptions="FillAndExpand"/>
+                        
+            </StackLayout>
+            
+        </StackLayout>
+    
+</ContentPage>

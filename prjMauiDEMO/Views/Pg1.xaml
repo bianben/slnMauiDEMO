@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="prjMAUIDEMO.Views.Pg1"
+             Title="Pg1">
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Button 
+            Text="Go to Page2"
+            Clicked="btnGo_Clicked"/>
+        <Button
+            Text="Send"
+            Clicked="btnSend_Clicked_1"/>
+    </VerticalStackLayout>
+</ContentPage>
