@@ -17,7 +17,7 @@ namespace prjMAUIDEMO
         {
             InitializeComponent();
             this.selectedCustomerIndex = -1;
-            MainPage = new NavigationPage(new PgCustomerEditor());
+            MainPage = new NavigationPage(new MainPage());
         }
     }
 }

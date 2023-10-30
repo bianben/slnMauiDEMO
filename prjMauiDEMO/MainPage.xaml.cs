@@ -27,8 +27,7 @@ namespace prjMAUIDEMO
             };
 
 
-        List<int> stringIndex = new List<int>();
-        List<int> colorIndex = new List<int>();
+        
 
         private void randomColorTest()
         {
@@ -81,8 +80,9 @@ namespace prjMAUIDEMO
                Colors.Green
             };
         }
-        
 
+        List<int> stringIndex = new List<int>();
+        List<int> colorIndex = new List<int>();
         public int myStringIndex()
         {
             int s = stringIndex[0];
@@ -102,27 +102,13 @@ namespace prjMAUIDEMO
         {
             Random r = new Random();
 
-
-            for (int i = 0; i <= 4; i++)
+            for (int i = 0; i < 4; i++)
             {
                 int a = r.Next(0, 4);
-                int b = r.Next(0, 4);
 
-                if (a != b)
+                if (!stringIndex.Contains(a))
                 {
-                    bool a重複 = stringIndex.Any(x => x == a);
-                    bool b重複 = colorIndex.Any(x => x == b);
-
-                    if (!a重複 && !b重複)
-                    {
-                        stringIndex.Add(a);
-                        colorIndex.Add(b);
-                        if (stringIndex.Count >= 4) { break; }
-                    }
-                    else
-                    {
-                        i--;
-                    }
+                    stringIndex.Add(a);
                 }
                 else
                 {
@@ -130,6 +116,25 @@ namespace prjMAUIDEMO
                 }
             }
 
+            for (int j = 0; j < 4; j++)
+            {
+                int b = r.Next(0, 4);
+
+                if (colorIndex.Count == stringIndex.Count - 1 && b == stringIndex[stringIndex.Count - 1])
+                {
+                    colorIndex.Clear();
+                    j = 0;
+                }
+
+                if (!colorIndex.Contains(b) && b != stringIndex[j])
+                {
+                    colorIndex.Add(b);
+                }
+                else
+                {
+                    j--;
+                }
+            }
 
 
             label1.Text = stringlist[myStringIndex()];
