@@ -9,7 +9,7 @@ public partial class PgCustomerEditor : ContentPage
     public PgCustomerEditor()
 	{
 		InitializeComponent();
-        _vModel=this.BindingContext as CCustomerViewModel;
+        _vModel = this.BindingContext as CCustomerViewModel;
 	}
 
 
