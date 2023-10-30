@@ -13,5 +13,7 @@ namespace prjMAUIDEMO.Models
         public string address { get; set; }
         public string phone { get; set; }
         public string email {  get; set; }
+
+        public override string ToString() { return this.name + "/" + this.email; }
     }
 }

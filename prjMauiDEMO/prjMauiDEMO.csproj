@@ -62,6 +62,27 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\PgBindSourceByXaml.xaml.cs">
+	    <DependentUpon>PgBindSourceByXaml.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\PgCustomerList.xaml.cs">
+	    <DependentUpon>PgCustomerList.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\PgBindingSourceByCode.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\PgBindSourceByXaml.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\PgCustomerKeyword.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\PgCustomerList.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Pg1.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

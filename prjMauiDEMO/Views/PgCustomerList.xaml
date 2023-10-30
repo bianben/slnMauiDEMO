@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="prjMAUIDEMO.Views.PgCustomerList"
+             Title="PgCustomerList">
+    <VerticalStackLayout>
+        <Label 
+            Text="客戶資料"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <ListView x:Name="lvCustomer"
+                  HorizontalOptions="FillAndExpand"
+                  ItemSelected="lvCustomer_ItemSelected"/>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,15 +1,23 @@
-﻿using prjMAUIDEMO.Views;
+﻿using prjMAUIDEMO.Models;
+using prjMAUIDEMO.Views;
 
 namespace prjMAUIDEMO
 {
     public partial class App : Application
     {
         public string userName {  get; set; }
+
+        public List<CCustomer> allCustomers { get; set; }
+
+        public int selectedCustomerIndex { get; set; }
+
+        public string keyword {  get; set; }
+
         public App()
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new PgCustomerEditor());
+            this.selectedCustomerIndex = -1;
+            MainPage = new NavigationPage(new PgBindingSourceByCode());
         }
     }
 }
