@@ -1,49 +1,45 @@
-using prjMAUIDEMO.Models;
+using prjMAUIDEMO.ViewModels;
 
 namespace prjMAUIDEMO.Views;
 
 public partial class PgCustomerEditor : ContentPage
 {
-    
+    CCustomerViewModel _vModel = null;
+
     public PgCustomerEditor()
 	{
 		InitializeComponent();
-        _manager.LoadData();
+        _vModel=this.BindingContext as CCustomerViewModel;
 	}
 
-    CCustomerManager _manager = new CCustomerManager();
 
     private void btnFirst_Clicked(object sender, EventArgs e)
     {
-        _manager.moveFirst();
-        showCustomerInfo();
+        _vModel.moveFirst();
     }
 
     private void showCustomerInfo()
     {
-        this.txtId.Text = _manager.current.id.ToString();
-        this.txtName.Text = _manager.current.name;
-        this.txtEmail.Text = _manager.current.email;
-        this.txtAddress.Text = _manager.current.address;
-        this.txtPhone.Text = _manager.current.phone;
+        this.txtId.Text = _vModel.current.id.ToString();
+        this.txtName.Text = _vModel.current.name;
+        this.txtEmail.Text = _vModel.current.email;
+        this.txtAddress.Text = _vModel.current.address;
+        this.txtPhone.Text = _vModel.current.phone;
     }
 
     private void btnPrevious_Clicked(object sender, EventArgs e)
     {
-        _manager.movePrevious();
-        showCustomerInfo();
+        _vModel.movePrevious();
     }
 
     private void btnNext_Clicked(object sender, EventArgs e)
     {
-        _manager.moveNext();
-        showCustomerInfo();
+        _vModel.moveNext();
     }
 
     private void btnLast_Clicked(object sender, EventArgs e)
     {
-        _manager.moveLast();
-        showCustomerInfo();
+        _vModel.moveLast();
     }
 
     private void btnQuery_Clicked(object sender, EventArgs e)
@@ -62,7 +58,7 @@ public partial class PgCustomerEditor : ContentPage
     private void btnList_Clicked(object sender, EventArgs e)
     {
         App app = Application.Current as App;
-        app.allCustomers = _manager.all;
+        app.allCustomers = _vModel.all;
         clearCache();
         Navigation.PushAsync(new PgCustomerList());
     }
@@ -72,13 +68,9 @@ public partial class PgCustomerEditor : ContentPage
         App app = Application.Current as App;
         if (app != null && !string.IsNullOrEmpty(app.keyword))
         {
-            if (_manager.queryByKeyword(app.keyword) != null)
-                showCustomerInfo();
+            _vModel.queryByKeyword(app.keyword);
         }
         if (app != null && app.selectedCustomerIndex >= 0)
-        {
-            _manager.moveTo(app.selectedCustomerIndex);
-            showCustomerInfo();
-        }
+            _vModel.moveTo(app.selectedCustomerIndex);
     }
 }
