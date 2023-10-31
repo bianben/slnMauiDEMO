@@ -46,19 +46,20 @@ public partial class PgNote : ContentPage
         }
         App app = Application.Current as App;
             app.allTodos = datas;
-        
+        app.selectedTodosIndex = -1;
 
         Navigation.PushAsync(new PgNoteList());
     }
 
     private void btnOk_Clicked(object sender, EventArgs e)
     {
-        if (_current != null)
+        if (_current == null)
             return;
         Preferences.Default.Remove("T" + _current.id);
         Preferences.Default.Remove("D" + _current.id);
         txtDate.Text = "";
         txtTitle.Text = "";
+        
     }
 
     protected override void OnAppearing()
@@ -71,5 +72,7 @@ public partial class PgNote : ContentPage
             txtDate.Text = _current.date;
             txtTitle.Text = _current.title;
         }
+
+
     }
 }

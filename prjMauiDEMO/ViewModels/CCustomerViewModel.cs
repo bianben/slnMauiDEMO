@@ -70,6 +70,8 @@ namespace prjMAUIDEMO.ViewModels
                     _position = i;
                     return _list[i];
                 }
+
+
             }
             return null;
         }
