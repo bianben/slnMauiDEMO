@@ -13,11 +13,16 @@ namespace prjMAUIDEMO
 
         public string keyword {  get; set; }
 
+        public List<CTodo> allTodos { get; set; }
+
+        public int selectedTodosIndex { get; set; }
+
         public App()
         {
             InitializeComponent();
             this.selectedCustomerIndex = -1;
-            MainPage = new NavigationPage(new PgCustomerEditor());
+            this.selectedTodosIndex = -1;
+            MainPage = new NavigationPage(new PgNote());
         }
     }
 }
