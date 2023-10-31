@@ -71,5 +71,7 @@ public partial class PgNote : ContentPage
             txtDate.Text = _current.date;
             txtTitle.Text = _current.title;
         }
+
+
     }
 }
