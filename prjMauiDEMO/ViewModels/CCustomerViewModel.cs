@@ -10,12 +10,12 @@ namespace prjMAUIDEMO.ViewModels
 {
     public class CCustomerViewModel:INotifyPropertyChanged
     {
-        List<CCustomer> _list = null;
+        private List<CCustomer> _list = new List<CCustomer>();
         private int _position = 0;
 
         public CCustomerViewModel()
         {
-            LoadData();
+            loadData();
         }
         
         public event PropertyChangedEventHandler PropertyChanged;
@@ -26,29 +26,29 @@ namespace prjMAUIDEMO.ViewModels
 
 
 
-        public void LoadData()
+        public void loadData()
         {
-            //string folder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-            //string path = Path.Combine(folder, "customers.txt");
-            //string data = File.ReadAllText(path, Encoding.UTF8);
-            //var lines = data.Split('\n');
-            //foreach (var line in lines)
-            //{
-            //    if (!string.IsNullOrEmpty(line))
-            //    {
-            //        var cell = line.Split('\t');
-            //        CCustomer x = new CCustomer();
-            //        x.id = Convert.ToInt32(cell[0]);
-            //        x.name = cell[1];
-            //        x.phone = cell[2];
-            //        x.email = cell[3];
-            //        x.address = cell[4];
-            //        _list.Add(x);
-            //    }
-            //}
-            _list.Add(new CCustomer() { id = 1, name = "Tom", phone = "0910147258", email = "tom@gmail.com", address = "Taipei" });
-            _list.Add(new CCustomer() { id = 2, name = "Storm", phone = "0910258369", email = "strom@gmail.com", address = "Keelung" });
-            _list.Add(new CCustomer() { id = 3, name = "Steam", phone = "0910369147", email = "steam@gmail.com", address = "Taoyuan" });
+            string folder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            string path = Path.Combine(folder, "customers.txt");
+            string data = File.ReadAllText(path, Encoding.UTF8);
+            var lines = data.Split('\n');
+            foreach (var line in lines)
+            {
+                if (!string.IsNullOrEmpty(line))
+                {
+                    var cell = line.Split('\t');
+                    CCustomer x = new CCustomer();
+                    x.id = Convert.ToInt32(cell[0]);
+                    x.name = cell[1];
+                    x.phone = cell[2];
+                    x.email = cell[3];
+                    x.address = cell[4];
+                    _list.Add(x);
+                }
+            }
+            //_list.Add(new CCustomer() { id = 1, name = "Tom", phone = "0910147258", email = "tom@gmail.com", address = "Taipei" });
+            //_list.Add(new CCustomer() { id = 2, name = "Storm", phone = "0910258369", email = "strom@gmail.com", address = "Keelung" });
+            //_list.Add(new CCustomer() { id = 3, name = "Steam", phone = "0910369147", email = "steam@gmail.com", address = "Taoyuan" });
         }
 
         public void moveFirst()

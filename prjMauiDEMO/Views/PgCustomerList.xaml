@@ -8,8 +8,23 @@
             Text="客戶資料"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        <ListView x:Name="lvCustomer"
-                  HorizontalOptions="FillAndExpand"
-                  ItemSelected="lvCustomer_ItemSelected"/>
+        <CollectionView 
+            x:Name="lvCustomer"
+            HorizontalOptions="FillAndExpand"
+            SelectionMode="Single"
+            SelectionChanged="lvCustomer_SelectionChanged">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Label FontSize="35" TextColor="#003D79" Text="{Binding name}" Margin="5"/>
+                        <Label FontSize="20" TextColor="#0080FF" Text="{Binding phone}"/>
+
+                    </StackLayout>
+                    
+                </DataTemplate>
+                
+            </CollectionView.ItemTemplate>
+            
+        </CollectionView>
     </VerticalStackLayout>
 </ContentPage>

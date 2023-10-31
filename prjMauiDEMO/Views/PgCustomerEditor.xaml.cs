@@ -60,6 +60,10 @@ public partial class PgCustomerEditor : ContentPage
         App app = Application.Current as App;
         app.allCustomers = _vModel.all;
         clearCache();
+        for(int i = 0; i < app.allCustomers.Count; i++)
+        {
+            app.allCustomers[i].¬y¤ô¸¹ = i;
+        }
         Navigation.PushAsync(new PgCustomerList());
     }
 
