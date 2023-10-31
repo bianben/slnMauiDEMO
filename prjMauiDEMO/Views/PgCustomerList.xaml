@@ -18,13 +18,9 @@
                     <StackLayout>
                         <Label FontSize="35" TextColor="#003D79" Text="{Binding name}" Margin="5"/>
                         <Label FontSize="20" TextColor="#0080FF" Text="{Binding phone}"/>
-
                     </StackLayout>
-                    
                 </DataTemplate>
-                
             </CollectionView.ItemTemplate>
-            
         </CollectionView>
     </VerticalStackLayout>
 </ContentPage>
