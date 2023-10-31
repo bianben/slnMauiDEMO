@@ -22,7 +22,7 @@ namespace prjMAUIDEMO
             InitializeComponent();
             this.selectedCustomerIndex = -1;
             this.selectedTodosIndex = -1;
-            MainPage = new NavigationPage(new PgNote());
+            MainPage = new NavigationPage(new PgCustomerEditor());
         }
     }
 }

@@ -95,6 +95,9 @@
 	  <MauiXaml Update="Views\PgCustomerEditor.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\PgFileSave.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\PgLotto.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

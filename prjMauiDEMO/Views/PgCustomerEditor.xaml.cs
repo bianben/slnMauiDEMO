@@ -62,6 +62,13 @@ public partial class PgCustomerEditor : ContentPage
         clearCache();
         Navigation.PushAsync(new PgCustomerList());
     }
+
+    protected override void OnDisappearing()
+    {
+        base.OnDisappearing();
+        _vModel.persistant();
+    }
+
     protected override void OnAppearing()
     {
         base.OnAppearing();
